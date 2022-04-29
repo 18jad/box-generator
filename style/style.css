@@ -1,0 +1,514 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+body {
+  background: #f7f7f7;
+  height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-top: 40px;
+  position: relative;
+  user-select: none;
+  width: auto;
+}
+header h1 {
+  font-size: 44px;
+  letter-spacing: 4px;
+  color: #484e58;
+}
+@media only screen and (max-width: 800px) {
+  header h1 {
+    font-size: 26px;
+  }
+}
+header .behind-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #afb8cf;
+  transform: translate(-50%, -50%);
+  font-size: 70px;
+  z-index: -1;
+  opacity: 20%;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 800px) {
+  header .behind-header {
+    font-size: 40px;
+  }
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+@media only screen and (max-width: 800px) {
+  main {
+    transform: scale(0.9);
+    height: 100%;
+  }
+}
+
+.workshop {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: whitesmoke;
+  border: 1px solid #3332;
+  border-radius: 3px;
+}
+@media only screen and (max-width: 800px) {
+  .workshop {
+    flex-direction: column;
+    height: 750px;
+  }
+}
+.workshop .preview {
+  height: 100%;
+  width: 400px;
+  border-right: 1px solid #ccd0d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+@media only screen and (max-width: 800px) {
+  .workshop .preview {
+    border-right: 0;
+    border-bottom: 1px solid #ccd0d5;
+    height: 50%;
+  }
+}
+.workshop .preview span {
+  position: absolute;
+  border: 1px solid #ccd0d5;
+  background: #eeeeee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.workshop .preview span input {
+  width: 40px;
+  border: 0;
+  outline: none;
+  padding: 0 3px;
+  background: #eeeeee;
+}
+.workshop .preview span select {
+  appearance: none;
+  padding: 5px;
+  background-color: #bbbfca;
+  color: #484e58;
+  border: none;
+  font-family: inherit;
+  outline: none;
+  text-overflow: "";
+  -webkit-appearance: none;
+  text-indent: 1px;
+}
+.workshop .preview span:nth-child(1),
+.workshop .preview span:nth-child(2) {
+  top: 25%;
+}
+@media only screen and (max-width: 800px) {
+  .workshop .preview span:nth-child(1),
+.workshop .preview span:nth-child(2) {
+    top: 7%;
+  }
+}
+.workshop .preview span:nth-child(4),
+.workshop .preview span:nth-child(5) {
+  bottom: 25%;
+}
+@media only screen and (max-width: 800px) {
+  .workshop .preview span:nth-child(4),
+.workshop .preview span:nth-child(5) {
+    bottom: 7%;
+  }
+}
+.workshop .preview span:nth-child(1),
+.workshop .preview span:nth-child(4) {
+  right: 10%;
+}
+.workshop .preview span:nth-child(2),
+.workshop .preview span:nth-child(5) {
+  left: 10%;
+}
+.workshop .preview .box {
+  border: 1px solid #484e58;
+  height: 140px;
+  width: 230px;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+}
+@media only screen and (max-width: 800px) {
+  .workshop .preview .box {
+    height: 120px;
+    width: 200px;
+  }
+}
+.workshop .settings {
+  width: 400px;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+.workshop .settings .border-setting {
+  padding: 10px 20px;
+}
+.workshop .settings .border-setting .border-options {
+  border: 1px solid #ccd0d5;
+  padding: 15px;
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  background: #eeeeee;
+}
+.workshop .settings .border-setting .border-options input[type=checkbox] {
+  display: none;
+}
+.workshop .settings .border-setting .border-options .label {
+  font-size: 20px;
+  width: 50px;
+  color: #bbbfca;
+  background: transparent;
+  outline: none;
+  border: 1px solid #ccd0d5;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  display: inline-block;
+  padding: 3px;
+}
+.workshop .settings .border-setting .border-options .label:hover {
+  color: #afb8cf;
+  border: 1px solid #afb8cf;
+}
+.workshop .settings .border-setting .border-options input[type=checkbox]:checked + .label {
+  color: #484e58 !important;
+  border: 1px solid #484e58 !important;
+}
+.workshop .settings .border-setting .border-additional {
+  border: 1px solid #ccd0d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  height: 40px;
+  color: #484e58;
+}
+.workshop .settings .border-setting .border-additional input[type=range] {
+  width: 200px;
+}
+.workshop .settings .box-shadow-setting {
+  padding: 10px 20px;
+}
+.workshop .settings .box-shadow-setting .box-shadow-options {
+  border: 1px solid #ccd0d5;
+  padding: 15px;
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  background: #eeeeee;
+}
+.workshop .settings .box-shadow-setting .box-shadow-options input[type=radio] {
+  display: none;
+}
+.workshop .settings .box-shadow-setting .box-shadow-options .label {
+  font-size: 20px;
+  width: 70px;
+  height: 60px;
+  color: #bbbfca;
+  background: transparent;
+  outline: none;
+  border: 1px solid #ccd0d5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-in-out;
+}
+.workshop .settings .box-shadow-setting .box-shadow-options .label:hover {
+  color: #afb8cf;
+  border: 1px solid #afb8cf;
+}
+.workshop .settings .box-shadow-setting .box-shadow-options .label i {
+  font-size: 25px;
+}
+.workshop .settings .box-shadow-setting .box-shadow-options .label div {
+  border: 1px solid #ccd0d5;
+  width: 50px;
+}
+.workshop .settings .box-shadow-setting .box-shadow-options .label #full-shadow-center {
+  box-shadow: 0 0 5px #0003;
+}
+.workshop .settings .box-shadow-setting .box-shadow-options .label #full-shadow-right {
+  box-shadow: 3px 3px 5px #0003;
+}
+.workshop .settings .box-shadow-setting .box-shadow-options .label #full-shadow-down {
+  box-shadow: 0 4px 5px #0003;
+}
+.workshop .settings .box-shadow-setting .box-shadow-options input[type=radio]:checked + .label {
+  color: #484e58 !important;
+  border: 1px solid #484e58 !important;
+}
+.workshop .settings .box-shadow-setting .box-shadow-additional {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccd0d5;
+}
+.workshop .settings .box-shadow-setting .box-shadow-additional .blur-range,
+.workshop .settings .box-shadow-setting .box-shadow-additional .radius-range,
+.workshop .settings .box-shadow-setting .box-shadow-additional .shadow-color {
+  text-align: center;
+  border-left: 1px solid #ccd0d5;
+}
+.workshop .settings .box-shadow-setting .box-shadow-additional .shadow-color {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.workshop .settings .background-setting {
+  padding: 10px 20px;
+}
+.workshop .settings .background-setting .background-options {
+  border: 1px solid #ccd0d5;
+  padding: 10px;
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  background: #eeeeee;
+}
+.workshop .settings .background-setting .background-options button {
+  width: 100px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbbfca;
+  background: transparent;
+  outline: none;
+  border: 1px solid #ccd0d5;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+.workshop .settings .background-setting .background-options button:hover {
+  border: 1px solid #afb8cf;
+}
+.workshop .settings .background-setting .background-options button:hover i {
+  color: #afb8cf !important;
+}
+.workshop .settings .background-setting .background-options button i {
+  font-size: 25px;
+  color: #bbbfca;
+}
+.workshop .settings .background-slider {
+  position: absolute;
+  background: #eeeeee;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 600px;
+  transition: all 600ms ease-in-out;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.workshop .settings .background-slider .back-arrow {
+  position: absolute;
+  left: 20px;
+  top: 24px;
+  border: none;
+  outline: none;
+}
+.workshop .settings .background-slider .back-arrow i {
+  font-size: 20px;
+  cursor: pointer;
+}
+.workshop .settings .background-slider h3 {
+  text-align: center;
+}
+.workshop .settings .background-slider #background-type {
+  width: 300px;
+  text-align: center;
+  border: 1px solid #ccd0d5;
+  background: #f7f7f7;
+  padding: 5px;
+  outline: none;
+  cursor: pointer;
+}
+.workshop .settings .background-slider #background-type:focus {
+  outline: none;
+  border: 1px solid #484e58;
+}
+.workshop .settings .background-slider .background-changer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.workshop .settings .background-slider .background-changer .color-palettes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 30px;
+  margin-top: 30px;
+}
+.workshop .settings .background-slider .background-changer .color-palettes .colorp {
+  height: 40px;
+  width: 40px;
+  border: 3px solid #484e58;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: 0.2s ease-in-out;
+}
+.workshop .settings .background-slider .background-changer .color-palettes .colorp:hover {
+  transform: scale(1.07) translateY(-5px);
+  box-shadow: 0 8px 5px #3333;
+}
+.workshop .settings .background-slider .background-changer .color-palettes #color1 {
+  background: #de6b48;
+}
+.workshop .settings .background-slider .background-changer .color-palettes #color2 {
+  background: #f4b9b2;
+}
+.workshop .settings .background-slider .background-changer .color-palettes #color3 {
+  background: #7dbbc3;
+}
+.workshop .settings .background-slider .background-changer .color-palettes #color4 {
+  background: #001524;
+}
+.workshop .settings .background-slider .background-changer .color-palettes #color5 {
+  background: #26a96c;
+}
+.workshop .settings .background-slider .background-changer .color-palettes #color6 {
+  background: #007fff;
+}
+.workshop .settings .background-slider .background-changer .custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.workshop .settings .background-slider .background-changer .custom div {
+  margin-top: 20px;
+}
+.workshop .settings .background-slider .background-changer .gradient-changer {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.workshop .settings .background-slider .background-changer .gradient-changer input {
+  margin-top: 10px;
+  width: 220px;
+  cursor: col-resize;
+}
+.workshop .settings .background-slider .background-changer .gradient-changer .fpc,
+.workshop .settings .background-slider .background-changer .gradient-changer .spc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  margin-bottom: 20px;
+}
+.workshop .settings .background-slider .background-changer form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.workshop .settings .background-slider .background-changer form p {
+  margin-bottom: 10px;
+}
+.workshop .settings .background-slider .background-changer form input {
+  width: 300px;
+  height: 30px;
+  border: 1px solid #ccd0d5;
+  outline: none;
+}
+.workshop .settings .background-slider .background-changer form input[type=submit] {
+  border-radius: 0 0 10px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #484e58;
+}
+.workshop .settings .background-slider .background-changer form input[type=url] {
+  padding: 10px;
+}
+.workshop .settings .background-slider .background-changer .url-image-settings {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 300px;
+}
+.workshop .settings .background-slider .background-changer .url-image-settings p {
+  margin-bottom: 10px;
+}
+.workshop .settings .background-slider .background-changer .url-image-settings .url-image-options {
+  padding: 10px;
+  border: 1px solid #ccd0d5;
+  background: #f7f7f7;
+  border-radius: 6px;
+}
+.workshop .settings .background-slider .background-changer .url-image-settings .url-image-options div {
+  margin-bottom: 10px;
+}
+.workshop .settings .background-slider .background-changer .url-image-settings .url-image-options select {
+  margin-left: 10px;
+  width: 80px;
+  outline: none;
+  border: 1px solid #ccd0d5;
+}
+
+.pcr-app[data-theme=classic] {
+  width: 25em !important;
+}
+
+.colorPicker {
+  border: 4px solid #ccd0d5;
+  border-radius: 50px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+
+.active-border {
+  color: #484e58 !important;
+  border: 1px solid #484e58 !important;
+}
+
+/*# sourceMappingURL=style.css.map */

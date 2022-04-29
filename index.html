@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=], initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"/>
+    <link
+      href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/> 
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <title>Box Generator</title>
+  </head>
+  <body>
+    <header>
+      <span class="behind-header">BOX GENERATOR</span>
+      <h1>BOX GENERATOR</h1>
+    </header>
+    <main>
+      <div class="workshop">
+        <div class="preview">
+          <span>
+            <input type="number" id="border-top-right" data-border="borderTopRightRadius" value="0" min="0" max="99" /><select
+              name=""
+              id=""
+              disabled
+
+            >
+              <option value="px" id=>px</option>
+            </select></span
+          >
+          <span>
+            <input type="number" id="border-top-left" data-border="borderTopLeftRadius" value="0" min="0" max="99" /><select
+              name=""
+              id=""
+              disabled
+            >
+              <option value="px">px</option>
+            </select></span
+          >
+          <div class="box" id="previewBox"></div>
+          <span>
+            <input type="number" id="border-bottom-right" data-border="borderBottomRightRadius" value="0" min="0" max="99"/><select
+              name=""
+              id=""
+              disabled
+
+            >
+              <option value="px">px</option>
+            </select></span
+          >
+          <span>
+            <input type="number" id="border-bottom-left" data-border="borderBottomLeftRadius" value="0" min="0" max="99"/><select
+              name=""
+              id=""
+              disabled
+
+            >
+              <option value="px">px</option>
+            </select></span
+          >
+        </div>
+        <div class="settings">
+          <div class="border-setting">
+            <label for="borders">Borders: </label>
+            <div class="border-options" id="borders">
+              <label><input type="checkbox" id="borderLeft" class="borderBtn"><span class="label"><i class="fas fa-border-left"></i></span></label>
+              <label><input type="checkbox" id="borderBottom" class="borderBtn"><span class="label"><i class="fas fa-border-bottom"></i></span></label>
+              <label><input type="checkbox" id="borderRight" class="borderBtn"><span class="label"><i class="fas fa-border-right"></i></span></label>
+              <label><input type="checkbox" id="borderTop" class="borderBtn"><span class="label"><i class="fas fa-border-top"></i></i></span></label>
+              <label><input type="checkbox" id="border" class="borderAllBtn" checked><span class="label"><i class="fas fa-border-all"></i></span></label>
+            </div>
+            <div class="border-additional">
+              Width:
+              <input
+                type="range"
+                value="1"
+                min="1"
+                max="8"
+                minlength="1"
+                maxlength="8"
+                id="borderWidth"
+              />
+                  <button  class="colorPicker" name="borderColor" id="border-color"
+                  ></button>
+            </div>
+          </div>
+          <div class="box-shadow-setting">
+            <label for="box-shadow-options">Box Shadow:</label>
+            <div class="box-shadow-options">
+              <label><input type="radio" name="shadowSelector" id="removeShadowBtn" checked><span class="label"><i class="fas fa-ban"></i></span></label>
+              <label><input type="radio" name="shadowSelector" id="shadowBtn" data-shadow='{"x": 0, "y": 0, "blur": 5, "spread": 0}'><span class="label"><div id="full-shadow-center"></div></span></label>
+              <label><input type="radio" name="shadowSelector" id="shadowBtn" data-shadow='{"x": 3, "y": 3, "blur": 5, "spread": 0}'><span class="label"><div id="full-shadow-right"></div></span></label>
+              <label><input type="radio" name="shadowSelector" id="shadowBtn" data-shadow='{"x": 0, "y": 4, "blur": 5, "spread": 0}'><span class="label"><div id="full-shadow-down"></div></span></label> 
+            </div>
+            <div class="box-shadow-additional">
+              <div class="blur-range">
+                Blur:
+                <input
+                  type="range"
+                  value="5"
+                  id="shadowBlur"
+                  min="0"
+                  minlength="0"
+                  max="20"
+                  maxlength="20"
+                />
+              </div>
+              <div class="radius-range">
+                Spread:
+                <input
+                  type="range"
+                  value="0"
+                  id="shadowSpread"
+                  min="-2"
+                  minlength="-2"
+                  max="10"
+                  maxlength="10"
+                />
+              </div>
+              <div class="shadow-color">
+                  <div id="shadow-picker" class="colorPicker"></div>
+              </div>
+            </div>
+          </div>
+          <div class="background-setting">
+            <label for="background-options">Background: </label>
+            <div class="background-options">
+              <button id="removeBackground" class="active-border">
+                <i class="fas fa-ban"></i>
+              </button>
+              <button id="custom-bg">CUSTOM</button>
+              <div class="color-pickers"></div>
+            </div>
+          </div>
+          <div class="background-slider">
+            <button class="back-arrow">
+              <i class="fas fa-arrow-left"></i>
+            </button>
+            <h3>Background Editor</h3>
+            <div class="background-editor">
+              <select name="type" id="background-type">
+                <option value="solid">Solid Color</option>
+                <option value="gradient">Gradient Color</option>
+                <option value="url">URL</option>
+              </select>
+              <div class="background-changer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./scripts/backgroundHtml.js"></script>
+    <script src="./scripts/variables.js"></script>
+    <script src="./scripts/colorPicker.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
